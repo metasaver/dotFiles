@@ -4,20 +4,23 @@ export USERNAME=`whoami`
 
 ## update and install required packages
 sudo apt-get update
+sudo apt-get upgrade
+
 sudo apt-get -y install --no-install-recommends apt-utils dialog 2>&1
-sudo apt-get install -y \
-  curl \
-  git \
-  gnupg2 \
-  jq \
-  sudo \
-  openssh-client \
-  iproute2 \
-  procps \
-  wget \
-  unzip \
-  apt-transport-https \
-  lsb-release 
+
+# sudo apt-get install -y \
+#   curl \
+#   git \
+#   gnupg2 \
+#   jq \
+#   sudo \
+#   openssh-client \
+#   iproute2 \
+#   procps \
+#   wget \
+#   unzip \
+#   apt-transport-https \
+#   lsb-release 
 
 # Install Azure CLI
 # echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/azure-cli.list
