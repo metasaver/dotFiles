@@ -8,17 +8,17 @@ sudo apt-get upgrade
 
 sudo apt-get -y install --no-install-recommends apt-utils dialog 2>&1
 
-# sudo apt-get install -y \
-#   curl \
-#   git \
+sudo apt-get install -y \
+    curl \
+    git \
 #   gnupg2 \
 #   jq \
-#   sudo \
+    sudo \
 #   openssh-client \
 #   iproute2 \
 #   procps \
-#   wget \
-#   unzip \
+    wget \
+    unzip \
 #   apt-transport-https \
 #   lsb-release 
 
