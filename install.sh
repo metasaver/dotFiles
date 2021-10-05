@@ -10,17 +10,18 @@ sudo apt-get -y install --no-install-recommends apt-utils dialog 2>&1
 
 sudo apt-get install -y \
     curl \
+    fontconfig \
     git \
-#   gnupg2 \
-#   jq \
+    gnupg2 \
+    jq \
     sudo \
-#   openssh-client \
-#   iproute2 \
-#   procps \
+    openssh-client \
+    iproute2 \
+    procps \
     wget \
     unzip \
-#   apt-transport-https \
-#   lsb-release 
+    apt-transport-https \
+    lsb-release 
 
 # Install Jetbrains Mono font
 wget https://download.jetbrains.com/fonts/JetBrainsMono-2.001.zip
