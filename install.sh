@@ -35,6 +35,8 @@ then
     fonts-powerline \
     zsh
 
+    ls -l
+    
     cp -f ~/dotfiles/.zshrc ~/.zshrc
     chsh -s /usr/bin/zsh $USERNAME
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
