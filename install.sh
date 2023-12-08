@@ -74,3 +74,5 @@ fi
 sudo apt-get autoremove -y
 sudo apt-get autoremove -y
 sudo rm -rf /var/lib/apt/lists/*
+
+echo "### dotfile installation complete ###"
