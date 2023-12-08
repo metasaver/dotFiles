@@ -3,6 +3,7 @@ export INSTALL_ZSH=true
 export USERNAME=`whoami`
 
 ## update and install required packages
+echo "### update and install required packages ###"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
@@ -25,10 +26,13 @@ sudo apt-get install -y \
 
 # Check if JetBrains Mono font is already installed
 if ! fc-list | grep -q "JetBrainsMono"; then
+    echo "### JetBrains Mono font not found. Installing... ###"
     # Install JetBrains Mono font
     wget https://download.jetbrains.com/fonts/JetBrainsMono-2.001.zip
     sudo unzip JetBrainsMono-2.001.zip -d /usr/share/fonts
     sudo fc-cache -f -v
+else
+    echo "### JetBrains Mono font is already installed. ###"
 fi
 
 # Install & Configure Zsh
@@ -53,10 +57,10 @@ then
 
     # Check if Zsh is installed
     if command -v zsh &> /dev/null; then
-      echo "Zsh is already installed."
+      echo "### Zsh is already installed. ###"
     else
       # Install Zsh
-      echo "Installing Zsh..."
+      echo "### Installing Zsh... ###"
       sudo apt-get update
       sudo apt-get install -y zsh
 
@@ -65,6 +69,9 @@ then
 
       # Install Oh My Zsh (optional)
       sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+      git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+      echo "source $PWD/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
     fi
 
     # Print Zsh version
