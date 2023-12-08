@@ -23,10 +23,13 @@ sudo apt-get install -y \
     apt-transport-https \
     lsb-release 
 
-# Install Jetbrains Mono font
-wget https://download.jetbrains.com/fonts/JetBrainsMono-2.001.zip
-sudo unzip JetBrainsMono-2.001.zip -d /usr/share/fonts
-sudo fc-cache -f -v
+# Check if JetBrains Mono font is already installed
+if ! fc-list | grep -q "JetBrainsMono"; then
+    # Install JetBrains Mono font
+    wget https://download.jetbrains.com/fonts/JetBrainsMono-2.001.zip
+    sudo unzip JetBrainsMono-2.001.zip -d /usr/share/fonts
+    sudo fc-cache -f -v
+fi
 
 # Install & Configure Zsh
 if [ "$INSTALL_ZSH" = "true" ]
